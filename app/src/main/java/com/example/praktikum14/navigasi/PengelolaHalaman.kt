@@ -5,9 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.praktikum14.ui.view.InsertMhsView
 import androidx.navigation.compose.composable
 import com.example.praktikum14.ui.view.HomeScreen
+import com.example.praktikum14.ui.view.InsertView
 
 @Composable
 fun PengelolaHalaman (
@@ -28,7 +28,7 @@ fun PengelolaHalaman (
         }
 
         composable(DestinasiInsert.route) {
-            InsertMhsView(
+            InsertView(
                 onBack = {navController.popBackStack()},
                 onNavigate = {
                     navController.navigate(DestinasiHome.route)
