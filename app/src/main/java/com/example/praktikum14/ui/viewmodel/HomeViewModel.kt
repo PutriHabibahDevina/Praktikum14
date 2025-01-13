@@ -1,4 +1,4 @@
-package com.example.meet15.Viewmodel
+package com.example.praktikum14.Viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
