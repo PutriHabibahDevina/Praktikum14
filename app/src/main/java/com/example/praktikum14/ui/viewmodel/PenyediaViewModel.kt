@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.meet15.Viewmodel.HomeViewModel
+import com.example.praktikum14.Viewmodel.HomeViewModel
 import com.example.praktikum14.MahasiswaApp
 import com.example.praktikum14.model.Mahasiswa
 
