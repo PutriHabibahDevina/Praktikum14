@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -29,8 +30,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.praktikum14.ui.viewmodel.FormErrorState
 import com.example.praktikum14.ui.viewmodel.FormState
-import com.example.praktikum14.ui.viewmodel.FromErrorState
 import com.example.praktikum14.ui.viewmodel.InsertUiState
 import com.example.praktikum14.ui.viewmodel.InsertViewModel
 import com.example.praktikum14.ui.viewmodel.MahasiswaEvent
@@ -38,8 +39,9 @@ import com.example.praktikum14.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InsertMhsView(
+fun InsertView(
     onBack: () -> Unit,
     onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
@@ -156,7 +158,7 @@ fun InsertBodyMhs (
 fun FormMahasiswa (
     mahasiswaEvent: MahasiswaEvent = MahasiswaEvent(),
     onValueChange: (MahasiswaEvent) -> Unit,
-    errorState: FromErrorState = FormErrorState(),
+    errorState: FormErrorState = FormErrorState(),
     modifier: Modifier = Modifier
 ){
     val jenisKelamin = listOf("Laki-laki", "Perempuan")
