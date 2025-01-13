@@ -2,15 +2,17 @@ package com.example.praktikum14.navigasi
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
+import androidx.navigation.compose.NavHost
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.praktikum14.ui.view.InsertMhsView
+import androidx.navigation.compose.composable
+import com.example.praktikum14.ui.view.HomeScreen
 
 @Composable
 fun PengelolaHalaman (
     modifier: Modifier,
-    navController: NavController = rememberNavController()
+    navController: NavHostController = rememberNavController()
 ){
     NavHost(
         navController = navController,
@@ -18,7 +20,7 @@ fun PengelolaHalaman (
         modifier = Modifier
     ){
         composable(DestinasiHome.route) {
-            HomeView(
+            HomeScreen(
                 navigateToItemEntry = {
                     navController.navigate(DestinasiInsert.route)
                 }
