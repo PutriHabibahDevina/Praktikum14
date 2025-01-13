@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
+import com.example.praktikum14.ui.view.DetailScreen
 import com.example.praktikum14.ui.view.HomeScreen
 import com.example.praktikum14.ui.view.InsertView
 
@@ -31,7 +32,16 @@ fun PengelolaHalaman (
             InsertView(
                 onBack = {navController.popBackStack()},
                 onNavigate = {
-                    navController.navigate(DestinasiHome.route)
+                    navController.navigate(DestinasiDetail.route)
+                }
+            )
+        }
+
+        composable(DestinasiDetail.route) {
+            DetailScreen(
+                onBack = {navController.popBackStack()},
+                onNavigate = {
+                    navController.navigate(DestinasiInsert.route)
                 }
             )
         }
