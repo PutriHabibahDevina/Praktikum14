@@ -43,10 +43,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.praktikum14.Viewmodel.HomeUiState
-import com.example.praktikum14.Viewmodel.HomeViewModel
 import com.example.praktikum14.R
 import com.example.praktikum14.model.Mahasiswa
+import com.example.praktikum14.ui.viewmodel.HomeUiState
+import com.example.praktikum14.ui.viewmodel.HomeViewModel
 import com.example.praktikum14.ui.viewmodel.PenyediaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
