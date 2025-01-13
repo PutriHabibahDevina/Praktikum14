@@ -12,15 +12,16 @@ import kotlinx.coroutines.launch
 class InsertViewModel (
     private val mhs: RepositoryMhs
 ): ViewModel() {
-    var uiEvent: InsertUiState by mutableStateOf(InsertUiState)
+    var uiEvent: InsertUiState by mutableStateOf(InsertUiState())
+        private set
     var uiState: FormState by mutableStateOf(FormState.Idle)
         private set
 
     //Memperbarui state berdasarkan input pengguna
     fun updateState(mahasiswaEvent: MahasiswaEvent) {
-        uiEvent = uiEvent.copy{
+        uiEvent = uiEvent.copy(
             insertUiEvent = mahasiswaEvent
-        }
+        )
     }
 
     //Validasi data input pengguna
@@ -76,7 +77,7 @@ data class InsertUiState (
     val isEntryValid: FormErrorState = FormErrorState()
 )
 
-data class FromErrorState(
+data class FormErrorState(
     val nim: String? = null,
     val nama: String? = null,
     val jenisKelamin: String? = null,
@@ -92,12 +93,12 @@ data class FromErrorState(
 
 //Data class variabel yang menyimpan data input form
 data class MahasiswaEvent (
-    val nim: String? = "",
-    val nama: String? = "",
-    val jenisKelamin: String? = "",
-    val alamat: String? = "",
-    val kelas: String? = "",
-    val angkatan: String? = ""
+    val nim: String = "",
+    val nama: String = "",
+    val jenisKelamin: String = "",
+    val alamat: String = "",
+    val kelas: String = "",
+    val angkatan: String = ""
 )
 
 //Menyimpan input form ke dalam entity
